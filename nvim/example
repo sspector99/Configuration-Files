@@ -1,0 +1,47 @@
+-- packer
+28 vim.cmd [[packadd packer.nvim]]
+ 27
+ 26 return require('packer').startup(function(use)
+ 25     -- Packer can manage itself
+ 24     use 'wbthomason/packer.nvim'
+ 23     use 'gruvbox-community/gruvbox'
+ 22     use {
+ 21         'VonHeikemen/lsp-zero.nvim',
+ 20         branch = 'v1.x',
+ 19         requires = {
+ 18             -- LSP Support
+ 17             {'neovim/nvim-lspconfig'},             -- Required
+ 16             {'williamboman/mason.nvim'},           -- Optional
+ 15             {'williamboman/mason-lspconfig.nvim'}, -- Optional
+ 14
+ 13             -- Autocompletion
+ 12             {'hrsh7th/nvim-cmp'},         -- Required
+ 11             {'hrsh7th/cmp-nvim-lsp'},     -- Required
+ 10             {'hrsh7th/cmp-buffer'},       -- Optional
+  9             {'hrsh7th/cmp-path'},         -- Optional
+  8             {'saadparwaiz1/cmp_luasnip'}, -- Optional
+  7             {'hrsh7th/cmp-nvim-lua'},     -- Optional
+  6
+  5             -- Snippets
+  4             {'L3MON4D3/LuaSnip'},             -- Required
+  3             {'rafamadriz/friendly-snippets'}, -- Optional
+  2         }
+  1     }
+29  end)
+-- settings
+vim.opt.guicursor = ""
+  1 vim.opt.nu = true
+  2 vim.opt.relativenumber = true
+  3 vim.opt.tabstop = 4
+  4 vim.opt.softtabstop = 4
+  5 vim.opt.shiftwidth = 4
+  6 vim.opt.expandtab = false
+  7 vim.opt.smartindent = true
+  8 vim.opt.wrap = false
+  9 vim.opt.termguicolors = true
+ 10 vim.opt.incsearch = true
+ 11 vim.opt.scrolloff = 24
+ 12 --vim.cmd([["set background=none"]])
+ 13 --vim.cmd([[autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE]])
+ 14 --vim.cmd([["let g:gruvbox_transparent_bg = 0"]])
+ 15 vim.cmd([[colorscheme gruvbox]])
